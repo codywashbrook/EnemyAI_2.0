@@ -28,11 +28,11 @@ public class EnemyAI : MonoBehaviour
 
     //States
     public float sightRange, chaseRange , attackRange;
-    [SerializeField] private bool rangedEnemy; //toggle if u wanted ranged enemy
+    [SerializeField] private bool rangedEnemy; //toggle if ranged enemy
     private float initialAttackRange;
     public bool enemyInSightRange, enemyInAttackRange; //checking if player detected or in attack range
     private float prevDetectRange;
-    [SerializeField] private GameObject target; //current aquired target
+    [SerializeField] private GameObject target; //current acquired target
     [SerializeField] private float timeToSwitchTarget = 2;
     private float targetSwitchTimer; //used for switching targets after some time
 
@@ -77,7 +77,7 @@ public class EnemyAI : MonoBehaviour
             target = GetClosestEnemy(hitColliders).transform.root.gameObject; //getting the closest enemy target
         }
 
-        if (!target) //if not target aquired, reset the timer, which means the AI can aquire new target
+        if (!target) //if not target acquired, reset the timer, which means the AI can acquire new target
             targetSwitchTimer = timeToSwitchTarget;
 
         if (!enemyInSightRange && !enemyInAttackRange && isRetreating) Retreating(); //retreat state
